@@ -242,3 +242,23 @@ kg = {
 'creation_date':                    r'Record created:\s?(.+)',
 'expiration_date':                  r'Record expires on \s?(.+)'
 }
+
+vc = {
+'extend': 'com',
+}
+
+fm = {
+'extend': 'com',
+
+'domain_name':                      r'Query: \s?(.+)',
+'creation_date':                    r'Created: \s?(.+)',
+'expiration_date':                  r'Expires: \s?(.+)'
+}
+
+tv = {
+'extend': 'com',
+'domain_name':                      r'Domain Name: \s?(.+)',
+
+'creation_date':                    r'Creation Date: \s?(.+)',
+'expiration_date':                  r'Registry Expiry Date: \s?(.+)'
+}
