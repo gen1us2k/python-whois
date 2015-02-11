@@ -234,3 +234,11 @@ fr = {
 'name_servers':				r'nserver:\s*(.+)',
 'status':					r'status:\s?(.+)',
 }
+
+kg = {
+'extend': 'com',
+
+'domain_name':                      r'Domain \s?(.+)',
+'creation_date':                    r'Record created:\s?(.+)',
+'expiration_date':                  r'Record expires on \s?(.+)'
+}
