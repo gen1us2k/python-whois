@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='whois',
     version='0.6.8',
-    description='Python module/library for retrieving WHOIS information of domains.',
+    description='Python module/library for retrieving WHOIS information of domains. Able to extract data for all the popular TLDs (com, net, org, uk, pl, ru, lv, jp, co_jp, de, at, eu, biz, info, name, us, co, me, be, nz, cz, it, fr, kg, vc, fm, tv, edu, ca)',
     long_description=open('README').read(),
     author='Andrew Minkin and DDarko.org',
     author_email='minkin.andrew@gmail.com, ddarko@ddarko.org',
