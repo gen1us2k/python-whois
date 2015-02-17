@@ -9,8 +9,7 @@ CACHE_MAX_AGE = 60 * 60 * 48  # 48h
 
 try:
     import json
-
-except:
+except ImportError:
     import simplejson as json
 
 
