@@ -240,7 +240,7 @@ kg = {
 
 'domain_name':                      r'Domain \s?(.+)',
 'creation_date':                    r'Record created:\s?(.+)',
-'expiration_date':                  r'Record expires on \s?(.+)'
+'expiration_date':                  r'Record expires on \s?(.+)',
 }
 
 vc = {
@@ -261,4 +261,31 @@ tv = {
 
 'creation_date':                    r'Creation Date: \s?(.+)',
 'expiration_date':                  r'Registry Expiry Date: \s?(.+)'
+}
+
+edu = {
+'extend': 'com',
+'domain_name':          r'Domain Name: \s?(.+)',
+
+'creation_date':        r'Domain record activated: \s?(.+)',
+'expiration_date':      r'Domain expires: \s?(.+)',
+'updated_date':         r'Domain record last updated: \s?(.+)',
+}
+
+ca = {
+'extend': 'com',
+
+'domain_name':          r'Domain name: \s?(.+)',
+'creation_date':        r'Creation date: \s?(.+)',
+'expiration_date':      r'Expiry date: \s?(.+)',
+'updated_date':         r'Updated date: \s?(.+)',
+}
+
+it = {
+'extend': 'com',
+
+'domain_name':  r'Domain: \s?(.+)',
+'creation_date':    r'Created: \s?(.+)',
+'expiration_date':  r'Expire Date: \s?(.+)',
+'updated_date':     r'Last Update: \s?(.+)'
 }
