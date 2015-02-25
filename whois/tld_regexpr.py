@@ -118,6 +118,14 @@ eu = {
     'registrar': r'Name:\s?(.+)',
 }
 
+cc = {
+    'extend': 'com',
+
+    'registrar': r'(?:Sponsoring\s)?Registrar:\s?(.+)',
+    'registrant_cc': None,
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
+
 biz = {
     'extend': 'com',
 
@@ -172,7 +180,7 @@ be = {
     'extend': 'pl',
 
     'domain_name': r'\nDomain:\s*(.+)',
-    'registrar': r'(Company\s)?Name:\n?(.+)',
+    'registrar': r'(?:Company\s)?Name:\n?(.+)',
 
     'creation_date': r'Registered:\s*(.+)\n',
 
