@@ -4,6 +4,7 @@ com = {
     'domain_name': r'Domain Name:\s?(.+)',
     'registrar': r'Registrar:\s?(.+)',
     'registrant': None,
+    'registrant_cc': r'Registrant Country:\s?(.+)',
 
     'creation_date': r'Creation Date:\s?(.+)',
     'expiration_date': r'Expiration Date:\s?(.+)',
@@ -32,7 +33,7 @@ uk = {
 
     'registrant': r'Registrant:\n\s*(.+)',
 
-    'creation_date': r'Registered on:\s*(.+)',
+    'creation_date': r'Registered on:\s*(?:before )(.+)',
     'expiration_date': r'Renewal date:\s*(.+)',
     'updated_date': r'Last updated:\s*(.+)',
 

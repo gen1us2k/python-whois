@@ -9,6 +9,7 @@ class Domain:
     def __init__(self, data):
         self.name = data['domain_name'][0].strip().lower()
         self.registrar = data['registrar'][0].strip()
+        self.registrant_cc = data['registrant_cc'][0].strip().lower()
         self.creation_date = str_to_date(data['creation_date'][0])
         self.expiration_date = str_to_date(data['expiration_date'][0])
         self.last_updated = str_to_date(data['updated_date'][0])
@@ -43,6 +44,7 @@ DATE_FORMATS = [
     '%Y-%m-%d',  # 2000-01-02
     '%Y.%m.%d',  # 2000.01.02
     '%Y/%m/%d',  # 2005/05/30
+    '%b-%Y', # aug-1996 (very old uk domains)
 
     '%Y.%m.%d %H:%M:%S',  # 2002.09.19 13:00:00
     '%Y%m%d %H:%M:%S',  # 20110908 14:44:51
