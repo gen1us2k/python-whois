@@ -33,7 +33,7 @@ uk = {
 
     'registrant': r'Registrant:\n\s*(.+)',
 
-    'creation_date': r'Registered on:\s*(.+)',
+    'creation_date': r'Registered on:\s*(?:before )(.+)',
     'expiration_date': r'Renewal date:\s*(.+)',
     'updated_date': r'Last updated:\s*(.+)',
 
