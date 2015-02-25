@@ -32,6 +32,7 @@ uk = {
     'extend': 'com',
 
     'registrant': r'Registrant:\n\s*(.+)',
+    'registrant_cc': r'Registrant\'s address:\s+(?:[^\n][\n]?)+\n(.+)\n\n',
 
     'creation_date': r'Registered on:\s*(?:before )(.+)',
     'expiration_date': r'Renewal date:\s*(.+)',
@@ -44,6 +45,7 @@ uk = {
 pl = {
     'extend': 'uk',
 
+    'registrant_cc' : r'location:\s?(.+)',
     'creation_date': r'\ncreated:\s*(.+)\n',
     'updated_date': r'\nlast modified:\s*(.+)\n',
 
@@ -76,6 +78,7 @@ jp = {
     'domain_name': r'\[Domain Name\]\s?(.+)',
     'registrar': None,
     'registrant': r'\[Registrant\]\s?(.+)',
+    'registrant_cc' : None,
 
     'creation_date': r'\[Created on\]\s?(.+)',
     'expiration_date': r'\[Expires on\]\s?(.+)',
@@ -169,7 +172,7 @@ be = {
     'extend': 'pl',
 
     'domain_name': r'\nDomain:\s*(.+)',
-    'registrar': r'Company Name:\n?(.+)',
+    'registrar': r'(Company\s)?Name:\n?(.+)',
 
     'creation_date': r'Registered:\s*(.+)\n',
 
@@ -182,6 +185,7 @@ nz = {
     'domain_name': r'domain_name:\s?(.+)',
     'registrar': r'registrar_name:\s?(.+)',
     'registrant': r'registrant_contact_name:\s?(.+)',
+    'registrant_cc': r'registrant_contact_country:\s?([^\(]+).+',
 
     'creation_date': r'domain_dateregistered:\s?(.+)',
     'expiration_date': r'domain_datebilleduntil:\s?(.+)',
@@ -281,3 +285,49 @@ ca = {
     'expiration_date': r'Expiry date: \s?(.+)',
     'updated_date': r'Updated date: \s?(.+)',
 }
+
+cn = {
+    'extend': 'com',
+
+    'registrant': r'Registrant:\s?(.+)',
+    'registrant_cc': None,
+
+    'creation_date': r'Registration Date:\s?(.+)',
+    'updated_date': None,
+
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
+
+hk = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s?(.+)',
+    'registrar': r'Registrar Name:\s?(.+)',
+    'registrant': r'Company English Name\(?.+\)?:\s?(.+)',
+    'registrant_cc': r'Country:\s?(.+)',
+
+    'creation_date': r'Domain Name Commencement Date:\s?(.+)',
+    'expiration_date': r'Expiry Date:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': r'Name Servers Information:\s*(.+)\s*',
+    'status': r'Domain Status:\s?(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
+
+kr = {
+    'extend': None,
+
+    'domain_name': r'Domain Name\s+:\s?(.+)',
+    'registrar': None,
+    'registrant': r'Registrant\s+:\s?(.+)',
+    'registrant_cc': None,
+
+    'creation_date': r'Registered Date\s+:\s?(.+)',
+    'expiration_date': r'Expiration Date\s+:\s?(.+)',
+    'updated_date': r'Last Updated Date\s+:\s?(.+)',
+
+    'name_servers': r'Host Name\s+:\s?(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
+
