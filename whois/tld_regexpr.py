@@ -3,8 +3,8 @@ com = {
 
     'domain_name': r'Domain Name:\s?(.+)',
     'registrar': r'Registrar:\s?(.+)',
-    'registrant': None,
-    'registrant_cc': r'Registrant Country:\s?(.+)',
+    'registrant': r'Registrant:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Name(?:[^:]{0,}):\s?(.+)',
+    'registrant_cc': r'Registrant:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Country(?:[^:]{0,}):\s?(.+)',
 
     'creation_date': r'Creation Date:\s?(.+)',
     'expiration_date': r'Expiration Date:\s?(.+)',
