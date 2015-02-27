@@ -142,9 +142,9 @@ biz = {
 info = {
     'extend': 'biz',
 
-    'creation_date': r'Created On:\s?(.+)',
-    'expiration_date': r'Expiration Date:\s?(.+)',
-    'updated_date': r'Last Updated On:\s?(.+)',
+    'creation_date': r'Creat(?:ed On|ion Date):\s?(.+)',
+    'expiration_date': r'(?:Registry\s)?Expir(?:y|ation) Date:\s?(.+)',
+    'updated_date': r'(?:Last\s)?Updated (?:On|Date):\s?(.+)',
 
     'status': r'Status:\s?(.+)',
 }
