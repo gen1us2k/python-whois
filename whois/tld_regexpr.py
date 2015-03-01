@@ -65,6 +65,10 @@ ru = {
     'status': r'\nstate:\s*(.+)',
 }
 
+su = {
+    'extend': 'ru',
+}
+
 lv = {
     'extend': 'ru',
 
