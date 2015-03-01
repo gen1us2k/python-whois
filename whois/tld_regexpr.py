@@ -343,3 +343,19 @@ kr = {
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
 
+bo = {
+    'extend': None,
+
+    'domain_name': r'Dominio:\s?(.+)',
+    'registrar': None,
+    'registrant': r'TITULAR:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Organizacion(?:[^:]{0,}):\s?(.+)',
+    'registrant_cc': r'TITULAR:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Pais(?:[^:]{0,}):\s?(.+)',
+
+    'creation_date': r'Fecha de registro:\s?(.+)',
+    'expiration_date': r'Fecha de vencimiento:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': None,
+    'status': None,
+    'emails': r's/([\w.-]+)(\sen\s)([\w.-]+\.[\w]{2,4})/\1@\3/',
+}
