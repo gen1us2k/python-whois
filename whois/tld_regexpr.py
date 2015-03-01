@@ -260,14 +260,6 @@ vc = {
     'extend': 'com',
 }
 
-fm = {
-    'extend': 'com',
-
-    'domain_name': r'Query: \s?(.+)',
-    'creation_date': r'Created: \s?(.+)',
-    'expiration_date': r'Expires: \s?(.+)'
-}
-
 tv = {
     'extend': 'com',
     'domain_name': r'Domain Name: \s?(.+)',
