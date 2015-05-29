@@ -359,3 +359,18 @@ bo = {
     'status': None,
     'emails': r's/([\w.-]+)(\sen\s)([\w.-]+\.[\w]{2,4})/\1@\3/',
 }
+
+md = {
+    'extend': None,
+
+    'domain_name': r'Domain name:\s?(.+)',
+    'registrar': None,
+    'registrant': r'Registrant:\s?(.+)',
+    'registrant_cc': None,
+
+    'creation_date': r'Created:\s?(.+)',
+    'expiration_date': r'Expiration date:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': r'Name server:\s?(.+)',
+}
