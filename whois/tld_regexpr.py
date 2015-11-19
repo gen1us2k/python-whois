@@ -3,8 +3,8 @@ com = {
 
     'domain_name': r'Domain Name:\s?(.+)',
     'registrar': r'Registrar:\s?(.+)',
-    'registrant': None,
-    'registrant_cc': r'Registrant Country:\s?(.+)',
+    'registrant': r'Registrant:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Name(?:[^:]{0,}):\s?(.+)',
+    'registrant_cc': r'Registrant:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Country(?:[^:]{0,}):\s?(.+)',
 
     'creation_date': r'Creation Date:\s?(.+)',
     'expiration_date': r'Expiration Date:\s?(.+)',
@@ -65,6 +65,10 @@ ru = {
     'status': r'\nstate:\s*(.+)',
 }
 
+su = {
+    'extend': 'ru',
+}
+
 lv = {
     'extend': 'ru',
 
@@ -118,6 +122,14 @@ eu = {
     'registrar': r'Name:\s?(.+)',
 }
 
+cc = {
+    'extend': 'com',
+
+    'registrar': r'(?:Sponsoring\s)?Registrar:\s?(.+)',
+    'registrant_cc': None,
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
+
 biz = {
     'extend': 'com',
 
@@ -134,9 +146,9 @@ biz = {
 info = {
     'extend': 'biz',
 
-    'creation_date': r'Created On:\s?(.+)',
-    'expiration_date': r'Expiration Date:\s?(.+)',
-    'updated_date': r'Last Updated On:\s?(.+)',
+    'creation_date': r'Creat(?:ed On|ion Date):\s?(.+)',
+    'expiration_date': r'(?:Registry\s)?Expir(?:y|ation) Date:\s?(.+)',
+    'updated_date': r'(?:Last\s)?Updated (?:On|Date):\s?(.+)',
 
     'status': r'Status:\s?(.+)',
 }
@@ -172,7 +184,7 @@ be = {
     'extend': 'pl',
 
     'domain_name': r'\nDomain:\s*(.+)',
-    'registrar': r'(Company\s)?Name:\n?(.+)',
+    'registrar': r'(?:Company\s)?Name:\n?(.+)',
 
     'creation_date': r'Registered:\s*(.+)\n',
 
@@ -331,3 +343,34 @@ kr = {
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
 
+bo = {
+    'extend': None,
+
+    'domain_name': r'Dominio:\s?(.+)',
+    'registrar': None,
+    'registrant': r'TITULAR:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Organizacion(?:[^:]{0,}):\s?(.+)',
+    'registrant_cc': r'TITULAR:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Pais(?:[^:]{0,}):\s?(.+)',
+
+    'creation_date': r'Fecha de registro:\s?(.+)',
+    'expiration_date': r'Fecha de vencimiento:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': None,
+    'status': None,
+    'emails': r's/([\w.-]+)(\sen\s)([\w.-]+\.[\w]{2,4})/\1@\3/',
+}
+
+md = {
+    'extend': None,
+
+    'domain_name': r'Domain name:\s?(.+)',
+    'registrar': None,
+    'registrant': r'Registrant:\s?(.+)',
+    'registrant_cc': None,
+
+    'creation_date': r'Created:\s?(.+)',
+    'expiration_date': r'Expiration date:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': r'Name server:\s?(.+)',
+}
