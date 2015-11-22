@@ -374,3 +374,12 @@ md = {
 
     'name_servers': r'Name server:\s?(.+)',
 }
+
+st = {
+    'extend': 'com',
+
+    'status': r'Status:\s?(.+)',
+    'creation_date': r'Creation Date:\s?(.+)',
+    'expiration_date': r'Expiration Date:\s?(.+)',
+    'updated_date': r'Updated Date:\s?(.+)',
+}
