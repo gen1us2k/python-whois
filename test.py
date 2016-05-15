@@ -25,6 +25,7 @@ www.google.co.jp
 google.co
 google.de
 yandex.ru
+яндекс.рф
 google.us
 google.eu
 google.me
