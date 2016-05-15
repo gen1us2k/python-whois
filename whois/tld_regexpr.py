@@ -153,6 +153,12 @@ info = {
     'status': r'Status:\s?(.+)',
 }
 
+online = {
+    'extend': 'info',
+
+    'status': None,
+}
+
 name = {
     'extend': 'com',
 
