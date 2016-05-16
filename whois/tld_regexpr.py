@@ -69,6 +69,10 @@ su = {
     'extend': 'ru',
 }
 
+рф = {
+    'extend': 'ru',
+}
+
 lv = {
     'extend': 'ru',
 
