@@ -32,6 +32,7 @@ google.me
 google.be
 google.biz
 google.info
+nic.online
 google.name
 
 google.it
