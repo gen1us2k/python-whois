@@ -46,6 +46,8 @@ def query(domain, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
 
     if domain.endswith('.co.jp'):
         tld = 'co_jp'
+    elif domain.endswith('.рф') or domain.endswith('.xn--p1ai'):
+        tld = 'ru_rf'
     else:
         tld = d[-1]
 
@@ -59,5 +61,3 @@ def query(domain, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
             break
 
     return Domain(pd) if pd['domain_name'][0] else None
-
-

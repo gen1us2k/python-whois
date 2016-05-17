@@ -104,4 +104,3 @@ def str_to_date_py2(s):
             pass
 
     raise ValueError("Unknown date format: '%s'" % s)
-

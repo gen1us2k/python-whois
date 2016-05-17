@@ -3,7 +3,6 @@
 
 import whois
 
-
 domains = '''
 www.google.com
 www.fsdfsdfsdfsd.google.com
@@ -28,6 +27,7 @@ www.google.co.jp
 google.co
 google.de
 yandex.ru
+xn--h1aeh.xn--p1ai
 яндекс.рф
 google.us
 google.eu
@@ -46,9 +46,6 @@ dfsdfsfsdf
 test.ez.lv
 '''
 
-# domains = ''
-
-
 for d in domains.split('\n'):
     if d:
         print('-' * 80)
@@ -58,4 +55,3 @@ for d in domains.split('\n'):
             wd = w.__dict__
             for k, v in wd.items():
                 print('%20s\t"%s"' % (k, v))
-
