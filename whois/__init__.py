@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
 	Python module/library for retrieving WHOIS information of domains.
 
