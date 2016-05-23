@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import re
 import sys
 import datetime
@@ -101,4 +104,3 @@ def str_to_date_py2(s):
             pass
 
     raise ValueError("Unknown date format: '%s'" % s)
-

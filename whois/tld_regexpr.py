@@ -69,7 +69,7 @@ su = {
     'extend': 'ru',
 }
 
-рф = {
+ru_rf = {
     'extend': 'ru',
 }
 
