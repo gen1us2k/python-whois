@@ -1,30 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-	Python module/library for retrieving WHOIS information of domains.
-
-	By DDarko.org  ddarko@ddarko.org  http://ddarko.org/
-	License MIT  http://www.opensource.org/licenses/mit-license.php
-
-	Usage example
-	>>> import whois
-	>>> domain = whois.query('google.com')
-
-	>>> print(domain.__dict__)
-	{'expiration_date': datetime.datetime(2020, 9, 14, 0, 0), 'last_updated': datetime.datetime(2011, 7, 20, 0, 0), 'registrar': 'MARKMONITOR INC.', 'name': 'google.com', 'creation_date': datetime.datetime(1997, 9, 15, 0, 0)}
-
-	>>> print(domain.name)
-	google.com
-
-	>>> print(domain.expiration_date)
-	2020-09-14 00:00:00
-
-"""
 from ._1_query import do_query
 from ._2_parse import do_parse, TLD_RE
 from ._3_adjust import Domain
-
 
 CACHE_FILE = None
 SLOW_DOWN = 0
@@ -32,9 +11,9 @@ SLOW_DOWN = 0
 
 def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
     """
-        force=1				<bool>		Don't use cache.
-        cache_file=<path>	<str>		Use file to store cache not only memory.
-        slow_down=0			<int>		Time [s] it will wait after you query WHOIS database. This is useful when there is a limit to the number of requests at a time.
+    force=1				<bool>		Don't use cache.
+    cache_file=<path>	<str>		Use file to store cache not only memory.
+    slow_down=0			<int>		Time [s] it will wait after you query WHOIS database. This is useful when there is a limit to the number of requests at a time.
     """
     assert isinstance(domain, str), Exception('`domain` - must be <str>')
     cache_file = cache_file or CACHE_FILE
@@ -51,7 +30,7 @@ def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_retur
     else:
         tld = d[-1]
 
-    if tld not in TLD_RE.keys(): raise Exception('Unknown TLD: %s\n(all known TLD: %s)' % (tld, list(TLD_RE.keys())))
+    if tld not in TLD_RE.keys(): raise Exception("Unknown TLD: {0}\n(all known TLD: {1})".format(tld, list(TLD_RE.keys())))
 
     while 1:
         pd = do_parse(do_query(d, host, force, cache_file, slow_down, ignore_returncode), tld)

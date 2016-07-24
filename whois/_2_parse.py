@@ -4,14 +4,15 @@
 from . import tld_regexpr
 import re
 
-
 TLD_RE = {}
 
 
 def get_tld_re(tld):
+
     if tld in TLD_RE: return TLD_RE[tld]
     v = getattr(tld_regexpr, tld)
     extend = v.get('extend')
+
     if extend:
         e = get_tld_re(extend)
         tmp = e.copy()
@@ -28,11 +29,22 @@ def get_tld_re(tld):
 [get_tld_re(tld) for tld in dir(tld_regexpr) if tld[0] != '_']
 
 
-# from pprint import pprint
+def check_data(whois_str):
+    """
+    Delete comment strings.
+    """
+    g = ""
 
+    for line in whois_str.splitlines(True):
+        if not line.startswith('%'):
+            g += line
+
+    return g
 
 def do_parse(whois_str, tld):
     r = {}
+
+    whois_str = check_data(whois_str)
 
     if whois_str.count('\n') < 5:
         s = whois_str.strip().lower()
@@ -51,5 +63,4 @@ def do_parse(whois_str, tld):
         else:
             r[k] = v.findall(whois_str) or ['']
 
-    #pprint(r)
     return r

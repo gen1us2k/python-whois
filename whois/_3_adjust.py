@@ -7,7 +7,6 @@ import datetime
 
 PYTHON_VERSION = sys.version_info[0]
 
-
 class Domain:
     def __init__(self, data):
         self.name = data['domain_name'][0].strip().lower()
@@ -87,7 +86,7 @@ def str_to_date(s):
         except ValueError as e:
             pass
 
-    raise ValueError("Unknown date format: '%s'" % s)
+    raise ValueError("Unknown date format: '{0}'".format(s))
 
 
 def str_to_date_py2(s):
@@ -97,10 +96,12 @@ def str_to_date_py2(s):
     else:
         tz = 0
 
+    s = re.sub('\s\((\+)([0-9]{2})([0-9]{2})\)', '', s)
+
     for format in DATE_FORMATS:
         try:
             return datetime.datetime.strptime(s, format) + datetime.timedelta(hours=tz)
         except ValueError as e:
             pass
 
-    raise ValueError("Unknown date format: '%s'" % s)
+    raise ValueError("Unknown date format: '{0}'".format(s))
