@@ -4,54 +4,58 @@
 import whois
 
 domains = '''
-www.google.com
+google.com
 www.fsdfsdfsdfsd.google.com
-digg.com
-imdb.com
-microsoft.com
-
-www.google.org
-ddarko.org
-
+google.org
 google.net
-www.asp.net
-
 google.pl
-www.ddarko.pl
-
-google.co.uk
-
-google.jp
-www.google.co.jp
-
 google.co
+google.co.uk
+google.jp
+google.co.jp
 google.de
-yandex.ru
-xn--h1aeh.xn--p1ai
-яндекс.рф
+google.cc
+google.ru
 google.us
-google.eu
+google.eu,whois.markmonitor.com
 google.me
 google.be
 google.biz
 google.info
-nic.online
-google.name
-
 google.it
 google.cz
 google.fr
-
-dfsdfsfsdf
-test.ez.lv
+google.lv
+e2e4.online,whois.nic.ru
+napaster.name,whois.nic.ru
+XN--C1AAY4A.XN--P1AI
+гугл.рф
 '''
 
-for d in domains.split('\n'):
-    if d:
-        print('-' * 80)
-        print(d)
-        w = whois.query(d, ignore_returncode=1)
-        if w:
-            wd = w.__dict__
-            for k, v in wd.items():
-                print('%20s\t"%s"' % (k, v))
+def parse(data):
+    if "," in data:
+        data = data.split(',')
+
+        if len(data) == 1:
+            query(data[0])
+
+        elif len(data) == 2:
+            query(data[0], data[1])
+    else:
+        query(data)
+
+def query(domain, host=None):
+    print('-' * 80)
+    print("Domain: {0}, host: {1}".format(domain, host))
+    w = whois.query(domain, host, ignore_returncode=1)
+    if w:
+        wd = w.__dict__
+        for k, v in wd.items():
+            print('%20s\t"%s"' % (k, v))
+
+def main():
+    for data in domains.split('\n'):
+        if data: parse(data)
+
+if __name__ == "__main__":
+  main()

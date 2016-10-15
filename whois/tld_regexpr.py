@@ -22,10 +22,14 @@ net = {
 org = {
     'extend': 'com',
 
-    'creation_date': r'\nCreated On:\s?(.+)',
-    'updated_date': r'\nLast Updated On:\s?(.+)',
+    'creation_date': r'Creat(?:ed On|ion Date):\s?(.+)',
+    'expiration_date': r'(?:Registry\s)?Expir(?:y|ation) Date:\s?(.+)',
+    'updated_date': r'(?:Last\s)?Updated (?:On|Date):\s?(.+)',
 
-    'name_servers': r'Name Server:\s?(.+)\s*',
+    'registrar': r'Sponsoring Registrar:\s?(.+)',
+    'registrant': r'Registrant Organization:\s?(.+)',
+
+    'status': r'Status:\s?(.+)',
 }
 
 uk = {
@@ -34,11 +38,11 @@ uk = {
     'registrant': r'Registrant:\n\s*(.+)',
     'registrant_cc': r'Registrant\'s address:\s+(?:[^\n][\n]?)+\n(.+)\n\n',
 
-    'creation_date': r'Registered on:\s*(?:before )(.+)',
-    'expiration_date': r'Renewal date:\s*(.+)',
+    'creation_date': r'Registered on:\s?(.+)',
+    'expiration_date': r'Expiry date: \s?(.+)',
     'updated_date': r'Last updated:\s*(.+)',
 
-    'name_servers': r'Name Servers:\s*(.+)\s*',
+    'name_servers': r'Name servers:\n?(.+)\n?(.+)\n?(.+)\n?(.+)',
     'status': r'Registration status:\n\s*(.+)',
 }
 
@@ -48,6 +52,7 @@ pl = {
     'registrant_cc' : r'location:\s?(.+)',
     'creation_date': r'\ncreated:\s*(.+)\n',
     'updated_date': r'\nlast modified:\s*(.+)\n',
+    'expiration_date': r'\noption expiration date:\s*(.+)\n',
 
     'name_servers': r'\nnameservers:\s*(.+)\n\s*(.+)\n',
     'status': r'\nStatus:\n\s*(.+)',
@@ -56,7 +61,7 @@ pl = {
 ru = {
     'extend': 'com',
 
-    'domain_name': r'\ndomain:\s*(.+)',
+    'domain_name': r'domain:\s*(.+)',
 
     'creation_date': r'\ncreated:\s*(.+)',
     'expiration_date': r'\npaid-till:\s*(.+)',
@@ -76,8 +81,9 @@ ru_rf = {
 lv = {
     'extend': 'ru',
 
+    'registrar': r'\[Registrar\]?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Name(?:[^:]{0,}):\s?(.+)',
     'creation_date': r'Registered:\s*(.+)\n',
-    'updated_date': r'Changed:\s*(.+)\n',
+    'updated_date': r'Updated:\s*(.+)\n',
 
     'status': r'Status:\s?(.+)',
 }
@@ -108,6 +114,7 @@ co_jp = {
 de = {
     'extend': 'com',
     'domain_name': r'\ndomain:\s*(.+)',
+    'registrant_cc': r'CountryCode:\s?(.+)',
     'updated_date': r'\nChanged:\s?(.+)',
     'name_servers': r'Nserver:\s*(.+)',
 }
@@ -122,23 +129,17 @@ at = {
 eu = {
     'extend': 'com',
 
-    'domain_name': r'\ndomain:\s*(.+)',
+    'domain_name': r'Domai(?:n|n Name):\s?(.+)',
     'registrar': r'Name:\s?(.+)',
+    'name_servers': r'Name(?: servers| Server):\s(?:\s(.+)\s(.+)\s(.+)\s(.+)|(.+))',
 }
 
 cc = {
     'extend': 'com',
-
-    'registrar': r'(?:Sponsoring\s)?Registrar:\s?(.+)',
-    'registrant_cc': None,
-    'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
 
 biz = {
-    'extend': 'com',
-
-    'registrar': r'Sponsoring Registrar:\s?(.+)',
-    'registrant': r'Registrant Organization:\s?(.+)',
+    'extend': 'org',
 
     'creation_date': r'Domain Registration Date:\s?(.+)',
     'expiration_date': r'Domain Expiration Date:\s?(.+)',
@@ -148,19 +149,14 @@ biz = {
 }
 
 info = {
-    'extend': 'biz',
-
-    'creation_date': r'Creat(?:ed On|ion Date):\s?(.+)',
-    'expiration_date': r'(?:Registry\s)?Expir(?:y|ation) Date:\s?(.+)',
-    'updated_date': r'(?:Last\s)?Updated (?:On|Date):\s?(.+)',
-
-    'status': r'Status:\s?(.+)',
+    'extend': 'org'
 }
 
 online = {
-    'extend': 'info',
+    'extend': 'org',
 
-    'status': None,
+    'registrar': r'(?:Registrar|Sponsoring Registrar):\s?(.+)',
+    'status': r'Domain Status:\s?(.+)',
 }
 
 name = {
@@ -170,24 +166,17 @@ name = {
 }
 
 us = {
-    'extend': 'name',
+    'extend': 'biz',
+}
+
+me = {
+    'extend': 'org',
 }
 
 co = {
     'extend': 'biz',
 
     'status': r'Status:\s?(.+)',
-}
-
-me = {
-    'extend': 'biz',
-
-    'creation_date': r'Domain Create Date:\s?(.+)',
-    'expiration_date': r'Domain Expiration Date:\s?(.+)',
-    'updated_date': r'Domain Last Updated Date:\s?(.+)',
-
-    'name_servers': r'Nameservers:\s?(.+)',
-    'status': r'Domain Status:\s?(.+)',
 }
 
 be = {
@@ -236,14 +225,15 @@ it = {
     'extend': 'com',
 
     'domain_name': r'Domain:\s?(.+)',
-    'registrar': r'Registrar:\s*Organization:\s*(.+)',
-    'registrant': r'Registrant:\s?Name:\s?(.+)',
+    'registrar': r'Registrar\s*Organization:\s*(.+)',
+    'registrant_cc': None,
 
     'creation_date': r'Created:\s?(.+)',
     'expiration_date': r'Expire Date:\s?(.+)',
     'updated_date': r'Last Update:\s?(.+)',
 
-    'name_servers': r'Nameservers:\s?(.+)\s?(.+)\s?(.+)\s?(.+)',
+    'name_servers': r'Nameservers\s?(.+)\s?(.+)\s?(.+)\s?(.+)',
+    'emails': None,
     'status': r'Status:\s?(.+)',
 }
 
@@ -253,9 +243,10 @@ fr = {
     'domain_name': r'domain:\s?(.+)',
     'registrar': r'registrar:\s*(.+)',
     'registrant': r'contact:\s?(.+)',
+    'registrant_cc': r'country:\s?(.+)',
 
     'creation_date': r'created:\s?(.+)',
-    'expiration_date': None,
+    'expiration_date': r'Expiry Date:\s?(.+)',
     'updated_date': r'last-update:\s?(.+)',
 
     'name_servers': r'nserver:\s*(.+)',

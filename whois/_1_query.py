@@ -50,7 +50,7 @@ def do_query(dl, host=None, force=0, cache_file=None, slow_down=0, ignore_return
 
 def _do_whois_query(dl, host, ignore_returncode):
     """
-        Linux 'whois' command wrapper
+    Linux 'whois' command wrapper
     """
     if host == None:
         p = subprocess.Popen(['whois', '.'.join(dl)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -65,22 +65,3 @@ def _do_whois_query(dl, host, ignore_returncode):
 
     if not ignore_returncode and p.returncode != 0: raise Exception(r)
     return r
-
-
-"""
-import socket
-
-def _do_whois_query(dl):
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	s.connect((('%s.whois-servers.net' % dl[-1], 43)))
-	s.send(("%s\r\n" % '.'.join(dl)).encode())
-
-	response = []
-	while 1:
-		t = s.recv(4096)
-		response.append(t)
-		if t == b'': break
-
-	s.close()
-	return b''.join(response).decode()
-"""
