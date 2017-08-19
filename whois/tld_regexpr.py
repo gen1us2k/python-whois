@@ -26,7 +26,7 @@ org = {
     'expiration_date': r'(?:Registry\s)?Expir(?:y|ation) Date:\s?(.+)',
     'updated_date': r'(?:Last\s)?Updated (?:On|Date):\s?(.+)',
 
-    'registrar': r'Sponsoring Registrar:\s?(.+)',
+    'registrar': r'(?:Registrar|Sponsoring Registrar):\s?(.+)',
     'registrant': r'Registrant Organization:\s?(.+)',
 
     'status': r'Status:\s?(.+)',
@@ -155,8 +155,7 @@ info = {
 online = {
     'extend': 'org',
 
-    'registrar': r'(?:Registrar|Sponsoring Registrar):\s?(.+)',
-    'status': r'Domain Status:\s?(.+)',
+    'status': r'Domain Status:\s?(.+)'
 }
 
 name = {
