@@ -13,6 +13,16 @@ com = {
     'name_servers': r'Name Server:\s*(.+)\s*',
     'status': r'Status:\s?(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+
+    # Komand additions
+    'registry_domain_id': r'Registry Domain ID:\s?(.+)',
+    'registrar_whois_server': r'Registrar WHOIS Server:\s?(.+)',
+    'registrar_url': r'Registrar URL:\s?(.+)',
+    'registrar_iana_id': r'Registrar IANA ID:\s(.+)',
+    'registrar_abuse_contact_email': r'Registrar Abuse Contact Email:\s(.+)',
+    'registrar_abuse_contact_phone': r'Registrar Abuse Contact Phone:\s(.+)',
+    'domain_status': r'Domain Status:\s(.+)',
+    'dnssec': r'DNSSEC:\s(.+)'
 }
 
 net = {
