@@ -5,6 +5,8 @@ Python module/library for retrieving WHOIS information of domains.
 
 By DDarko  http://ddarko.org/
 
+Komand fork adds the remainder of the WHOIS information to the Domain class.
+
 
 Features
 =============
