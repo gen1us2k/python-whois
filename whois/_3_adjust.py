@@ -47,6 +47,17 @@ class Domain:
         except KeyError:
             pass
 
+    def get_json_serializable(self):
+        properties = self.__dict__
+
+        for key in properties:
+            if type(properties[key]) is datetime.datetime:
+                properties[key] = properties[key].isoformat()
+            if type(properties[key]) is set:
+                properties[key] = list(properties[key])
+
+        return properties
+
 
 # http://docs.python.org/library/datetime.html#strftime-strptime-behavior
 DATE_FORMATS = [
