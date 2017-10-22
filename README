@@ -11,7 +11,7 @@ Features
 
  * Python wrapper for Linux "whois" command
  * simple interface to access parsed WHOIS data for a given domain
- * able to extract data for all the popular TLDs (com, net, org, uk, pl, ru, рф, lv, jp, co_jp, de, at, eu, biz, info, online, name, us, co, me, be, nz, cz, it, fr, kg, vc, fm, tv, edu, ca)
+ * able to extract data for all the popular TLDs (com, net, org, uk, pl, ru, рф, lv, jp, co_jp, de, at, eu, biz, info, online, center, support, name, us, co, me, be, nz, cz, it, fr, kg, vc, fm, tv, edu, ca)
  * query a WHOIS server directly instead of going through an intermediate web service like many others do
  * works with Python 2.4+ and Python 3.x
  * all dates as datetime objects
