@@ -158,6 +158,12 @@ online = {
     'status': r'Domain Status:\s?(.+)'
 }
 
+center = {
+    'extend': 'org',
+
+    'status': r'Domain Status:\s?(.+)'
+}
+
 name = {
     'extend': 'com',
 
