@@ -30,6 +30,18 @@ e2e4.online,whois.nic.ru
 napaster.name,whois.nic.ru
 XN--C1AAY4A.XN--P1AI
 гугл.рф
+nic.pw
+nic.bid,whois.nic.bid
+nic.host,whois.nic.host
+nic.online,whois.nic.online
+nic.party,whois.nic.party
+nic.pro,whois.nic.pro
+nic.review,whois.nic.review
+nic.site,whois.nic.site
+nic.space,whois.nic.space
+nic.top,whois.nic.top
+nic.website,whois.nic.website
+nic.win,whois.nic.win
 '''
 
 def parse(data):
