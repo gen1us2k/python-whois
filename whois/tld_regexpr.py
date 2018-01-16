@@ -395,3 +395,51 @@ st = {
     'expiration_date': r'Expiration Date:\s?(.+)',
     'updated_date': r'Updated Date:\s?(.+)',
 }
+
+pw = {
+    'extend': 'tv',
+}
+
+bid = {
+    'extend': 'tv',
+}
+
+host = {
+    'extend': 'tv',
+}
+
+online = {
+    'extend': 'tv',
+}
+
+party = {
+    'extend': 'tv',
+}
+
+pro = {
+    'extend': 'tv',
+}
+
+review = {
+    'extend': 'tv',
+}
+
+site = {
+    'extend': 'tv',
+}
+
+space = {
+    'extend': 'tv',
+}
+
+top = {
+    'extend': 'tv',
+}
+
+website = {
+    'extend': 'tv',
+}
+
+win = {
+    'extend': 'tv',
+}
