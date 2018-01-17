@@ -408,10 +408,6 @@ host = {
     'extend': 'tv',
 }
 
-online = {
-    'extend': 'tv',
-}
-
 party = {
     'extend': 'tv',
 }
