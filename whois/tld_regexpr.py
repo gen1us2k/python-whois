@@ -443,3 +443,7 @@ win = {
 man = {
     'extend': 'tv',
 }
+
+men = {
+    'extend': 'tv',
+}
