@@ -439,3 +439,7 @@ website = {
 win = {
     'extend': 'tv',
 }
+
+man = {
+    'extend': 'tv',
+}
