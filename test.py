@@ -5,6 +5,7 @@ import whois
 
 domains = '''
 google.com
+comlaude.com
 www.fsdfsdfsdfsd.google.com
 google.org
 google.net
