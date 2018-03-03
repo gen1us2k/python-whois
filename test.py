@@ -5,6 +5,7 @@ import whois
 
 domains = '''
 google.com
+comlaude.com
 www.fsdfsdfsdfsd.google.com
 google.org
 google.net
@@ -33,7 +34,6 @@ XN--C1AAY4A.XN--P1AI
 nic.pw
 nic.bid,whois.nic.bid
 nic.host,whois.nic.host
-nic.online,whois.nic.online
 nic.party,whois.nic.party
 nic.pro,whois.nic.pro
 nic.review,whois.nic.review
@@ -42,6 +42,8 @@ nic.space,whois.nic.space
 nic.top,whois.nic.top
 nic.website,whois.nic.website
 nic.win,whois.nic.win
+nic.man,whois.nic.man
+nic.men,whois.nic.men
 '''
 
 def parse(data):
