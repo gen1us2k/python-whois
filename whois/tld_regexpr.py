@@ -507,3 +507,9 @@ im = {
     'status': None,
     'emails': None,
 }
+
+by = {
+    'extend': 'com',
+
+    'registrant_cc': r'Country:\s*(.*)',
+}
