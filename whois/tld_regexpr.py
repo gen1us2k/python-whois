@@ -461,3 +461,12 @@ kz = {
     'emails': r'Email Address\.*:\s(.*)',
 }
 
+aero = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+    'registrant_cc': None,
+
+    'name_servers': r'Name Server:\s*(.+)\r\n',
+    'status': None,
+}

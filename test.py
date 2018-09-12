@@ -45,6 +45,7 @@ nic.space,whois.nic.space
 nic.top,whois.nic.top
 nic.website,whois.nic.website
 nic.win,whois.nic.win
+whois.aero
 '''
 
 def parse(data):
