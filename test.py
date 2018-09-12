@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+
 import whois
 
-domains = '''
+DOMAINS = '''
 google.com
 www.fsdfsdfsdfsd.google.com
 google.org
@@ -26,6 +28,9 @@ google.it
 google.cz
 google.fr
 google.lv
+google.kz
+google.by
+google.am
 e2e4.online,whois.nic.ru
 napaster.name,whois.nic.ru
 XN--C1AAY4A.XN--P1AI
@@ -42,6 +47,12 @@ nic.space,whois.nic.space
 nic.top,whois.nic.top
 nic.website,whois.nic.website
 nic.win,whois.nic.win
+whois.aero
+test.taxi
+test.foundation
+nic.ir
+test.technology
+test.im
 '''
 
 def parse(data):
@@ -66,7 +77,12 @@ def query(domain, host=None):
             print('%20s\t"%s"' % (k, v))
 
 def main():
-    for data in domains.split('\n'):
+    if len(sys.argv) > 1:
+        domains = sys.argv[1:]
+    else:
+        domains = DOMAINS.split('\n')
+
+    for data in domains:
         if data: parse(data)
 
 if __name__ == "__main__":

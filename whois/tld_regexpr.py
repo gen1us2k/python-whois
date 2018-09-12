@@ -141,10 +141,6 @@ cc = {
 biz = {
     'extend': 'org',
 
-    'creation_date': r'Domain Registration Date:\s?(.+)',
-    'expiration_date': r'Domain Expiration Date:\s?(.+)',
-    'updated_date': r'Domain Last Updated Date:\s?(.+)',
-
     'status': None,
 }
 
@@ -442,4 +438,95 @@ website = {
 
 win = {
     'extend': 'tv',
+}
+
+kz = {
+    'extend': None,
+
+    'domain_name': r'Domain Name\.*:\s(.+)',
+    'registrar': r'Current Registar:\s(.+)',
+    'registrant': r'Organization Using Domain Name?\s{0,}(?:[^\n][\n]?){1,}?\s{0,}Name(?:[^:]{1,}):\s?(.+)',
+    'registrant_cc': r'Organization Using Domain Name?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Country(?:[^:]{0,}):\s?(.+)',
+
+    'creation_date': r'Domain created:\s?(.+)',
+    'expiration_date': None,
+    'updated_date': r'Last modified\s*:\s?(.+)',
+
+    'name_servers': r'(?:Primary|Secondary) server\.+:\s*(.+)\s*',
+    'status': r'Domain status\s*:\s?(.+)',
+    'emails': r'Email Address\.*:\s(.*)',
+}
+
+aero = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+    'registrant_cc': None,
+
+    'name_servers': r'Name Server:\s*(.+)\r\n',
+    'status': None,
+}
+
+taxi = {
+    'extend': 'org',
+}
+
+foundation = {
+    'extend': 'org',
+}
+
+ir = {
+    'extend': 'ru',
+
+    'registrar': r'nic-hdl:\s*(.*)',
+    'registrant': r'org:\s*(.*)',
+    'registrant_cc': None,
+
+    'creation_date': None,
+    'expiration_date': r'expire-date:\s?(.+)',
+    'updated_date': r'last-updated:\s?(.+)',
+}
+
+technology = {
+    'extend': 'org',
+}
+
+im = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s?(.+)',
+    'registrar': None,
+    'registrant': None,
+    'registrant_cc': None,
+
+    'creation_date': None,
+    'expiration_date': r'Expiry Date:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': r'Name Server:\s*(.+)\s*',
+    'status': None,
+    'emails': None,
+}
+
+by = {
+    'extend': 'com',
+
+    'registrant_cc': r'Country:\s*(.*)',
+}
+
+am = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s*(.+)',
+    'registrar': r'Registrar:\s?(.+)',
+    'registrant': r'Registrant:\s+(.*)',
+    'registrant_cc': r'Registrant:(?:\n.*){3}\s+(\w+)\n\n',
+
+    'creation_date': r'Registered:\s*(.+)',
+    'expiration_date': r'Expires:\s*(.+)',
+    'updated_date': r'Last modified:\s*(.+)',
+
+    'name_servers': r'DNS servers:\n?(.+)\n?(.+)\n?(.+)\n?(.+)',
+    'status': r'Status:\s*(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
