@@ -48,6 +48,7 @@ nic.win,whois.nic.win
 whois.aero
 test.taxi
 test.foundation
+nic.ir
 '''
 
 def parse(data):

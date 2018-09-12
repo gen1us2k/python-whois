@@ -474,3 +474,15 @@ taxi = {
 foundation = {
     'extend': 'org',
 }
+
+ir = {
+    'extend': 'ru',
+
+    'registrar': r'nic-hdl:\s*(.*)',
+    'registrant': r'org:\s*(.*)',
+    'registrant_cc': None,
+
+    'creation_date': None,
+    'expiration_date': r'expire-date:\s?(.+)',
+    'updated_date': r'last-updated:\s?(.+)',
+}
