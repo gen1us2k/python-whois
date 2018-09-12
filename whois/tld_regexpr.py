@@ -470,3 +470,7 @@ aero = {
 taxi = {
     'extend': 'org',
 }
+
+foundation = {
+    'extend': 'org',
+}
