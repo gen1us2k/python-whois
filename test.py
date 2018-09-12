@@ -49,6 +49,7 @@ whois.aero
 test.taxi
 test.foundation
 nic.ir
+test.technology
 '''
 
 def parse(data):

@@ -486,3 +486,7 @@ ir = {
     'expiration_date': r'expire-date:\s?(.+)',
     'updated_date': r'last-updated:\s?(.+)',
 }
+
+technology = {
+    'extend': 'org',
+}
