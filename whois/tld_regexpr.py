@@ -490,3 +490,20 @@ ir = {
 technology = {
     'extend': 'org',
 }
+
+im = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s?(.+)',
+    'registrar': None,
+    'registrant': None,
+    'registrant_cc': None,
+
+    'creation_date': None,
+    'expiration_date': r'Expiry Date:\s?(.+)',
+    'updated_date': None,
+
+    'name_servers': r'Name Server:\s*(.+)\s*',
+    'status': None,
+    'emails': None,
+}

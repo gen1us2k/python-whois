@@ -50,6 +50,7 @@ test.taxi
 test.foundation
 nic.ir
 test.technology
+test.im
 '''
 
 def parse(data):
