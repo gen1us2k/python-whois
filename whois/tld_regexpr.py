@@ -470,3 +470,7 @@ aero = {
     'name_servers': r'Name Server:\s*(.+)\r\n',
     'status': None,
 }
+
+taxi = {
+    'extend': 'org',
+}

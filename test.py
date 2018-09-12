@@ -46,6 +46,7 @@ nic.top,whois.nic.top
 nic.website,whois.nic.website
 nic.win,whois.nic.win
 whois.aero
+test.taxi
 '''
 
 def parse(data):
