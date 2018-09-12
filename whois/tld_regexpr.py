@@ -443,3 +443,21 @@ website = {
 win = {
     'extend': 'tv',
 }
+
+kz = {
+    'extend': None,
+
+    'domain_name': r'Domain Name\.*:\s(.+)',
+    'registrar': r'Current Registar:\s(.+)',
+    'registrant': r'Organization Using Domain Name?\s{0,}(?:[^\n][\n]?){1,}?\s{0,}Name(?:[^:]{1,}):\s?(.+)',
+    'registrant_cc': r'Organization Using Domain Name?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Country(?:[^:]{0,}):\s?(.+)',
+
+    'creation_date': r'Domain created:\s?(.+)',
+    'expiration_date': None,
+    'updated_date': r'Last modified\s*:\s?(.+)',
+
+    'name_servers': r'(?:Primary|Secondary) server\.+:\s*(.+)\s*',
+    'status': r'Domain status\s*:\s?(.+)',
+    'emails': r'Email Address\.*:\s(.*)',
+}
+
