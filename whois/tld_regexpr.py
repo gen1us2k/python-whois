@@ -513,3 +513,20 @@ by = {
 
     'registrant_cc': r'Country:\s*(.*)',
 }
+
+am = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s*(.+)',
+    'registrar': r'Registrar:\s?(.+)',
+    'registrant': r'Registrant:\s+(.*)',
+    'registrant_cc': r'Registrant:(?:\n.*){3}\s+(\w+)\n\n',
+
+    'creation_date': r'Registered:\s*(.+)',
+    'expiration_date': r'Expires:\s*(.+)',
+    'updated_date': r'Last modified:\s*(.+)',
+
+    'name_servers': r'DNS servers:\n?(.+)\n?(.+)\n?(.+)\n?(.+)',
+    'status': r'Status:\s*(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
