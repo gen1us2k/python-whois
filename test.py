@@ -31,6 +31,7 @@ google.lv
 google.kz
 google.by
 google.am
+google.com.ua
 e2e4.online,whois.nic.ru
 napaster.name,whois.nic.ru
 XN--C1AAY4A.XN--P1AI

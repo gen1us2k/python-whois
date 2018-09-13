@@ -530,3 +530,20 @@ am = {
     'status': r'Status:\s*(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
+
+ua = {
+    'extend': None,
+
+    'domain_name': r'domain:\s*(.+)',
+    'registrar': r'registrar:\s?(.+)',
+    'registrant': r'organization:\s*(.+)',
+    'registrant_cc': r'country:\s*(.+)',
+
+    'creation_date': r'created:\s*(.+)',
+    'expiration_date': r'expires:\s*(.+)',
+    'updated_date': r'modified:\s*(.+)',
+
+    'name_servers': r'nserver:\s*(.+)',
+    'status': r'status:\s*(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
