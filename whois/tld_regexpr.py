@@ -261,11 +261,21 @@ fr = {
 }
 
 kg = {
-    'extend': 'com',
+    'extend': None,
 
-    'domain_name': r'Domain \s?(.+)',
+    'domain_name': r'Domain\s+([\w]+\.[\w]+)\s*',
+    'registrar': r'Administrative Contact:\n[\w\W\s]*?Name:\s+(.*)\n',
+    'registrant': r'Billing Contact:\n[\w\W\s]*?Name:\s+(.*)\n',
+    'registrant_cc': None,
+
     'creation_date': r'Record created:\s?(.+)',
-    'expiration_date': r'Record expires on \s?(.+)',
+    'expiration_date': r'Record expires on:\s?(.+)',
+    'updated_date': r'Record last updated on:\s?(.+)',
+
+    # TODO: improve parsing when >2 name servers
+    'name_servers': r'Name servers in the listed order:\n\n(.*)\s\n(.*)\s\n',
+    'status': r'Status:\s?(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
 
 vc = {
@@ -528,5 +538,22 @@ am = {
 
     'name_servers': r'DNS servers:\n?(.+)\n?(.+)\n?(.+)\n?(.+)',
     'status': r'Status:\s*(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
+
+ua = {
+    'extend': None,
+
+    'domain_name': r'domain:\s*(.+)',
+    'registrar': r'registrar:\s?(.+)',
+    'registrant': r'organization:\s*(.+)',
+    'registrant_cc': r'country:\s*(.+)',
+
+    'creation_date': r'created:\s*(.+)',
+    'expiration_date': r'expires:\s*(.+)',
+    'updated_date': r'modified:\s*(.+)',
+
+    'name_servers': r'nserver:\s*(.+)',
+    'status': r'status:\s*(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
