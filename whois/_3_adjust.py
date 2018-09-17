@@ -64,11 +64,12 @@ DATE_FORMATS = [
     '%a %b %d %Y',  # Tue Dec 12 2000
     '%Y-%m-%dT%H:%M:%S',  # 2007-01-26T19:10:31
     '%Y-%m-%dT%H:%M:%SZ',  # 2007-01-26T19:10:31Z
-    '%Y-%m-%dT%H:%M:%S %z',  # 2011-03-30T19:36:27+0200
-    '%Y-%m-%dT%H:%M:%S.%f %z',  # 2011-09-08T14:44:51.622265+03:00
+    '%Y-%m-%dT%H:%M:%S%z',  # 2011-03-30T19:36:27+0200
+    '%Y-%m-%dT%H:%M:%S.%f%z',  # 2011-09-08T14:44:51.622265+03:00
     '%Y-%m-%dt%H:%M:%S.%f',  # 2011-09-08t14:44:51.622265
-    '%Y-%m-%d %H:%M:%S (%Z)',  # 2010-04-07 03:32:36 (GMT)
+    '%Y-%m-%d %H:%M:%S (%Z%z)',  # 2010-04-07 03:32:36 (GMT+0:00)
     '%d/%m/%Y %H:%M:%S',  # 21/09/2018 23:59:48
+    '%Y-%m-%d %H:%M:%S+02',  # 2014-03-06 10:25:29+02
 ]
 
 
@@ -78,15 +79,14 @@ def str_to_date(s):
 
     s = s.replace('(jst)', '(+0900)')
     s = s.replace('.0z', '')
-    s = re.sub('([+-][0-9]{2}):([0-9]{2})', ' \\1\\2', s)
-    s = re.sub('\s([+-][0-9]{2})([0-9]{2})', '\\1\\2', s)
-    s = re.sub('(\d)([+-][0-9]{2})([0-9]{2})', '\\1 \\2\\3', s)
-    s = re.sub('[+-][0-9]{1}:[0-9]{2}', '', s)
-    s = re.sub('[+-][0-9]{2}$', '', s)
 
     if PYTHON_VERSION < 3: return str_to_date_py2(s)
 
     for format in DATE_FORMATS:
+        if "%z" in format:
+            s = re.sub(r"([+-]\d\d):(\d\d)$", r"\1\2", s)  # "+03:00"
+            s = re.sub(r"([+-])(\d):(\d\d)\)$", r"\g<1>0\2\3)", s)  # "+0:00)"
+            s = re.sub(r"([+-]\d\d):(\d\d)\)$", r"\1\2)", s)  # "+00:00)"
         try:
             return datetime.datetime.strptime(s, format)
         except ValueError as e:
@@ -102,10 +102,12 @@ def str_to_date_py2(s):
     else:
         tz = 0
 
-    s = re.sub('\s\([+-]([0-9]{2})([0-9]{2})\)', '', s)
-    s = re.sub('\s[+-]([0-9]{2})([0-9]{2})', '', s)
-
     for format in DATE_FORMATS:
+        if "%z" in format:
+            format = format.replace("%z", "")
+            s = re.sub(r"[+-]\d{4}", "", s)
+            s = re.sub(r"[+-]\d:\d\d", "", s)
+            s = re.sub(r"[+-]\d\d:\d\d", "", s)
         try:
             return datetime.datetime.strptime(s, format) + datetime.timedelta(hours=tz)
         except ValueError as e:
