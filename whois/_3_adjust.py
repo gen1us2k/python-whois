@@ -69,7 +69,7 @@ DATE_FORMATS = [
     '%Y-%m-%dt%H:%M:%S.%f',  # 2011-09-08t14:44:51.622265
     '%Y-%m-%d %H:%M:%S (%Z%z)',  # 2010-04-07 03:32:36 (GMT+0:00)
     '%d/%m/%Y %H:%M:%S',  # 21/09/2018 23:59:48
-    '%Y-%m-%d %H:%M:%S+02',  # 2014-03-06 10:25:29+02
+    '%Y-%m-%d %H:%M:%S%z',  # 2014-03-06 10:25:29+02
 ]
 
 
@@ -87,6 +87,7 @@ def str_to_date(s):
             s = re.sub(r"([+-]\d\d):(\d\d)$", r"\1\2", s)  # "+03:00"
             s = re.sub(r"([+-])(\d):(\d\d)\)$", r"\g<1>0\2\3)", s)  # "+0:00)"
             s = re.sub(r"([+-]\d\d):(\d\d)\)$", r"\1\2)", s)  # "+00:00)"
+            s = re.sub(r"([+-]\d\d)$", r"\g<1>00", s)  # "+00"
         try:
             return datetime.datetime.strptime(s, format)
         except ValueError as e:
@@ -108,6 +109,7 @@ def str_to_date_py2(s):
             s = re.sub(r"[+-]\d{4}", "", s)
             s = re.sub(r"[+-]\d:\d\d", "", s)
             s = re.sub(r"[+-]\d\d:\d\d", "", s)
+            s = re.sub(r"[+-]\d\d$", "", s)
         try:
             return datetime.datetime.strptime(s, format) + datetime.timedelta(hours=tz)
         except ValueError as e:
