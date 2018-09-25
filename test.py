@@ -55,6 +55,7 @@ test.foundation
 nic.ir
 test.technology
 test.im
+nic.co.ua
 '''
 
 def parse(data):
