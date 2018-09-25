@@ -557,3 +557,19 @@ ua = {
     'status': r'status:\s*(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
+
+co_ua = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s*(.+)',
+    'registrar': r'Sponsoring Registrar:\s?(.+)',
+    'registrant_cc': r'Registrant Country:\s*(.+)',
+
+    'creation_date': r'Created On:\s*(.+)',
+    'expiration_date': r'Expiration Date:\s*(.+)',
+    'updated_date': r'Last Updated On:\s*(.+)',
+
+    'name_servers': r'Name Server:\s*(.+)',
+    'status': r'Status:\s*(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
