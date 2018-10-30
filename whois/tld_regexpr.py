@@ -298,6 +298,14 @@ tv = {
     'expiration_date': r'Registry Expiry Date: \s?(.+)'
 }
 
+help = {
+    'extend': 'tv',
+}
+
+link = {
+    'extend': 'tv',
+}
+
 edu = {
     'extend': 'com',
     'domain_name': r'Domain Name: \s?(.+)',
