@@ -33,6 +33,9 @@ google.by
 google.am
 google.com.ua
 google.kg
+google.help
+google.tv
+google.link
 e2e4.online,whois.nic.ru
 napaster.name,whois.nic.ru
 XN--C1AAY4A.XN--P1AI
