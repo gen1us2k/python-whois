@@ -7,7 +7,7 @@ com = {
     'registrant_cc': r'Registrant:?\s{0,}(?:[^\n][\n]?){0,}?\s{0,}Country(?:[^:]{0,}):\s?(.+)',
 
     'creation_date': r'Creation Date:\s?(.+)',
-    'expiration_date': r'Expiration Date:\s?(.+)',
+    'expiration_date': r'Expiration Date:\n|Expiration Date:\s?(.+)',
     'updated_date': r'Updated Date:\s?(.+)',
 
     'name_servers': r'Name Server:\s*(.+)\s*',
