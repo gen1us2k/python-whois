@@ -33,7 +33,7 @@ class Domain:
                     x, _ = x.split(' ', 1)
                     x = x.strip(' .')
 
-                self.name_servers.add(x.lower())
+                self.name_servers.add(x.strip().lower())
 
             #----------------------------------
 

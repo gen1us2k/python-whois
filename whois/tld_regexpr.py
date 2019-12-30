@@ -581,3 +581,13 @@ co_ua = {
     'status': r'Status:\s*(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
+
+travel = {
+    'extend': 'com',
+    'domain_name': r'Domain Name: \s?(.+)',
+
+    'creation_date': r'Creation Date: \s?(.+)',
+    'expiration_date': r'Registry Expiry Date: \s?(.+)',
+
+    'name_servers': r'Name Server: *(.+)',
+}

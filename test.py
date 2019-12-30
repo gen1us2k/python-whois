@@ -59,6 +59,7 @@ nic.ir
 test.technology
 test.im
 nic.co.ua
+nic.travel
 '''
 
 def parse(data):
