@@ -1794,6 +1794,10 @@ immobilien = {
 immo = {
   'extend': 'com',
 }
+#Using "IN" as "in" is a keyword in python
+IN = {
+    'extend': 'com',
+}
 industries = {
   'extend': 'com',
 }
