@@ -60,6 +60,7 @@ test.technology
 test.im
 nic.co.ua
 nic.travel
+google.ee
 '''
 
 def parse(data):

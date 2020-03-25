@@ -591,3 +591,18 @@ travel = {
 
     'name_servers': r'Name Server: *(.+)',
 }
+
+ee = {
+    'domain_name': r'Domain:\nname:\s+(.*)',
+    'registrar': r'Registrar:\nname:\s+(.*)',
+    'registrant': r'Registrant:\nname:\s+(.*)',
+    'registrant_cc': r'Registrant:[\n\w\s:.()\-\+]+?country:\s+(.*)',
+
+    'creation_date': r'Domain:[\n\w\s:.()\-\+]+?registered:\s(.*)',
+    'expiration_date': r'Domain:[\n\w\s:.()\-\+]+?expire:\s(.*)',
+    'updated_date': r'Domain:[\n\w\s:.()\-\+]+?changed:\s+(.*)',
+
+    'name_servers': r'nserver:\s+(.*)',
+    'status': r'Domain:[\n\w\s:.()\-\+]+?status:\s+(.*)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
