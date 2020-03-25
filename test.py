@@ -61,6 +61,7 @@ test.im
 nic.co.ua
 nic.travel
 google.ee
+nic.company
 '''
 
 def parse(data):
