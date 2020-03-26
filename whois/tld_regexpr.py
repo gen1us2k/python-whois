@@ -606,3 +606,7 @@ ee = {
     'status': r'Domain:[\n\w\s:.()\-\+]+?status:\s+(.*)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
+
+company = {
+    'extend': 'com',
+}
