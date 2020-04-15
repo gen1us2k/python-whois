@@ -610,3 +610,9 @@ ee = {
 company = {
     'extend': 'com',
 }
+
+delivery = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
