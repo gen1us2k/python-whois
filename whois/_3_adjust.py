@@ -67,28 +67,39 @@ DATE_FORMATS = [
     '%Y-%m-%d',  # 2000-01-02
     '%Y.%m.%d',  # 2000.01.02
     '%Y/%m/%d',  # 2005/05/30
-    '%d-%m-%Y',  # 31-01-2000
-    '%m-%d-%Y',  # 01-31-2000
-    '%Y. %m. %d.', # 2000. 01. 31. (Korean style)
-    '%b-%Y', # aug-1996 (very old uk domains)
-
+    'before %b-%Y',  # before aug-1996
     '%Y.%m.%d %H:%M:%S',  # 2002.09.19 13:00:00
     '%Y%m%d %H:%M:%S',  # 20110908 14:44:51
     '%Y-%m-%d %H:%M:%S',  # 2011-09-08 14:44:51
+    '%Y-%m-%d %H:%M:%S CLST',  # 2011-09-08 14:44:51 CLST CL
+    '%Y-%m-%d %H:%M:%S.%f',  # 2011-09-08 14:44:51 CLST CL
     '%d.%m.%Y  %H:%M:%S',  # 19.09.2002 13:00:00
     '%d-%b-%Y %H:%M:%S %Z',  # 24-Jul-2009 13:20:03 UTC
-    '%d %b %Y %H:%M %Z',
     '%Y/%m/%d %H:%M:%S (%z)',  # 2011/06/01 01:05:01 (+0900)
     '%Y/%m/%d %H:%M:%S',  # 2011/06/01 01:05:01
     '%a %b %d %H:%M:%S %Z %Y',  # Tue Jun 21 23:59:59 GMT 2011
-    '%a %b %d %H:%M:%S %Y',  # Tue Jun 21 23:59:59 2015
     '%a %b %d %Y',  # Tue Dec 12 2000
     '%Y-%m-%dT%H:%M:%S',  # 2007-01-26T19:10:31
     '%Y-%m-%dT%H:%M:%SZ',  # 2007-01-26T19:10:31Z
-    '%Y-%m-%dt%H:%M:%S.%fz', # 2007-01-26t19:10:31.999z
-    '%Y-%m-%dT%H:%M:%S %z',  # 2011-03-30T19:36:27+0200
-    '%Y-%m-%dT%H:%M:%S.%f %z',  # 2011-09-08T14:44:51.622265+03:00
+    '%Y-%m-%dt%H:%M:%S.%fz',  # 2007-01-26t19:10:31.00z
+    '%Y-%m-%dT%H:%M:%S%z',  # 2011-03-30T19:36:27+0200
+    '%Y-%m-%dT%H:%M:%S.%f%z',  # 2011-09-08T14:44:51.622265+03:00
     '%Y-%m-%dt%H:%M:%S.%f',  # 2011-09-08t14:44:51.622265
+    '%Y-%m-%dt%H:%M:%S',  # 2007-01-26T19:10:31
+    '%Y-%m-%dt%H:%M:%SZ',  # 2007-01-26T19:10:31Z
+    '%Y-%m-%dt%H:%M:%S.%fz',  # 2007-01-26t19:10:31.00z
+    '%Y-%m-%dt%H:%M:%S%z',  # 2011-03-30T19:36:27+0200
+    '%Y-%m-%dt%H:%M:%S %z',  # 2011-03-30T19:36:27+0200
+    '%Y-%m-%dt%H:%M:%S.%f%z',  # 2011-09-08T14:44:51.622265+03:00
+    '%Y%m%d',  # 20110908
+    '%Y. %m. %d.',  # 2020. 01. 12.
+    'before %b-%Y',  # before aug-1996
+    '%a %d %b %Y',  # Tue 21 Jun 2011
+    '%A %d %b %Y',  # Tuesday 21 Jun 2011
+    '%a %d %B %Y',  # Tue 21 June 2011
+    '%A %d %B %Y',  # Tuesday 21 June 2011
+    '%Y-%m-%d %H:%M:%S (%Z+0:00)',  # 2007-12-24 10:24:32 (gmt+0:00)
+    '%B %d %Y',  # January 01 2000
 ]
 
 
@@ -109,6 +120,14 @@ def str_to_date(s):
             return datetime.datetime.strptime(s, format)
         except ValueError as e:
             pass
+
+    if "#" in s:
+        new_s = s.split("#")[0].strip()
+        for format in DATE_FORMATS:
+            try:
+                return datetime.datetime.strptime(new_s, format)
+            except ValueError as e:
+                pass
 
     raise ValueError("Unknown date format: '{0}'".format(s))
 
