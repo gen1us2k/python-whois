@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import whois
+import time
 
 domains = '''
 google.com
@@ -23,7 +24,6 @@ google.be
 google.biz
 google.info
 google.it
-google.cz
 google.fr
 google.lv
 gotechnology.io
@@ -31,6 +31,9 @@ e2e4.online,whois.nic.ru
 napaster.name,whois.nic.ru
 XN--C1AAY4A.XN--P1AI
 гугл.рф
+google.com.br
+example.com.org
+google.cz
 '''
 
 def parse(data):
@@ -56,6 +59,7 @@ def query(domain, host=None):
 
 def main():
     for data in domains.split('\n'):
+        time.sleep(3)
         if data: parse(data)
 
 if __name__ == "__main__":

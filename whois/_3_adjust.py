@@ -103,33 +103,29 @@ DATE_FORMATS = [
 ]
 
 
-def str_to_date(s):
-    s = s.strip().lower()
-    if not s or s == 'not defined': return
+def str_to_date(text):
+    text = text.strip().lower()
 
-    s = s.replace('(jst)', '(+0900)')
-    s = s.replace('.0z', '')
-    s = re.sub('([+-][0-9]{2}):([0-9]{2})', ' \\1\\2', s)
-    s = re.sub('\s([+-][0-9]{2})([0-9]{2})', '\\1\\2', s)
-    s = re.sub('(\d)([+-][0-9]{2})([0-9]{2})', '\\1 \\2\\3', s)
+    if not text or text == 'not defined':
+        return
 
-    if PYTHON_VERSION < 3: return str_to_date_py2(s)
+    text = text.replace('(jst)', '(+0900)')
+    text = re.sub('(\+[0-9]{2}):([0-9]{2})', '\\1\\2', text)
+    text = re.sub('(\ #.*)', '', text)
+    # hack for 1st 2nd 3rd 4th etc
+    # better here https://stackoverflow.com/questions/1258199/python-datetime-strptime-wildcard
+    text = re.sub(r"(\d+)(st|nd|rd|th) ", r"\1 ", text)
+
+    if PYTHON_VERSION < 3:
+        return str_to_date_py2(text)
 
     for format in DATE_FORMATS:
         try:
-            return datetime.datetime.strptime(s, format)
-        except ValueError as e:
+            return datetime.datetime.strptime(text, format)
+        except ValueError:
             pass
 
-    if "#" in s:
-        new_s = s.split("#")[0].strip()
-        for format in DATE_FORMATS:
-            try:
-                return datetime.datetime.strptime(new_s, format)
-            except ValueError as e:
-                pass
-
-    raise ValueError("Unknown date format: '{0}'".format(s))
+    raise Exception("Unknown date format: '%s'" % text)
 
 
 def str_to_date_py2(s):
