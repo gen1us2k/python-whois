@@ -63,6 +63,9 @@ nic.travel
 google.ee
 nic.company
 nic.delivery
+nic.services
+nic.systems
+nic.network
 '''
 
 def parse(data):
