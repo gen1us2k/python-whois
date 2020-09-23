@@ -616,3 +616,21 @@ delivery = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+services = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
+
+systems = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
+
+network = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
