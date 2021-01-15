@@ -634,3 +634,10 @@ network = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+cl = {
+    'extend': 'com',
+
+    'registrar': r'Registrar name:\s?(.+)',
+    'registrant': r'Registrant name:\s?(.+)',
+}

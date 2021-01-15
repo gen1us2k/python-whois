@@ -66,6 +66,7 @@ nic.delivery
 nic.services
 nic.systems
 nic.network
+nic.cl
 '''
 
 def parse(data):

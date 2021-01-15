@@ -80,6 +80,8 @@ def str_to_date(s):
     if not s or s == 'not defined': return
 
     s = s.replace('(jst)', '(+0900)')
+    s = s.replace(' clst', ' -03:00')
+    s = s.replace(' clt', ' -04:00')
     s = s.replace('.0z', '')
 
     if PYTHON_VERSION < 3: return str_to_date_py2(s)
