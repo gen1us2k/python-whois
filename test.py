@@ -67,6 +67,7 @@ nic.services
 nic.systems
 nic.network
 nic.cl
+nic.company
 '''
 
 def parse(data):

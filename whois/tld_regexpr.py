@@ -641,3 +641,9 @@ cl = {
     'registrar': r'Registrar name:\s?(.+)',
     'registrant': r'Registrant name:\s?(.+)',
 }
+
+company = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
