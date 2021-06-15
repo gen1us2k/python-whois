@@ -647,3 +647,9 @@ company = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+dot_in = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
