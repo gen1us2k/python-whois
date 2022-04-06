@@ -48,6 +48,7 @@ DATE_FORMATS = [
     '%Y/%m/%d',  # 2005/05/30
     '%d-%m-%Y',  # 31-01-2000
     '%m-%d-%Y',  # 01-31-2000
+    '%Y%m%d',    # 20240405
     '%Y. %m. %d.', # 2000. 01. 31. (Korean style)
     '%b-%Y', # aug-1996 (very old uk domains)
 

@@ -69,6 +69,7 @@ nic.network
 nic.cl
 nic.company
 nic.in
+test.com.br
 '''
 
 def parse(data):
