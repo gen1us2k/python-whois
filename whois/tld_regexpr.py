@@ -653,3 +653,10 @@ dot_in = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+br = {
+    'extend': 'ua',
+
+    'creation_date': r'created:\s*(\d+)',
+    'registrant': r'owner:\s*(.+)',
+}
