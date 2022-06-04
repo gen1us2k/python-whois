@@ -34,13 +34,13 @@ def cache_save(cf):
     f.close()
 
 
-def do_query(dl, host=None, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
+def do_query(dl, host=None, force=0, cache_file=None, slow_down=0, ignore_returncode=0, cmd="whois"):
     k = '.'.join(dl)
     if cache_file: cache_load(cache_file)
     if force or k not in CACHE or CACHE[k][0] < time.time() - CACHE_MAX_AGE:
         CACHE[k] = (
         int(time.time()),
-        _do_whois_query(dl, host, ignore_returncode),
+        _do_whois_query(dl, host, ignore_returncode, cmd=cmd),
         )
         if cache_file: cache_save(cache_file)
         if slow_down: time.sleep(slow_down)
@@ -48,14 +48,14 @@ def do_query(dl, host=None, force=0, cache_file=None, slow_down=0, ignore_return
     return CACHE[k][1]
 
 
-def _do_whois_query(dl, host, ignore_returncode):
+def _do_whois_query(dl, host, ignore_returncode, cmd="whois"):
     """
     Linux 'whois' command wrapper
     """
     if host == None:
-        p = subprocess.Popen(['whois', '.'.join(dl)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p = subprocess.Popen([cmd, '.'.join(dl)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     else:
-        p = subprocess.Popen(['whois', '-h', host, '.'.join(dl)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p = subprocess.Popen([cmd, '-h', host, '.'.join(dl)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     r = p.communicate()[0]
     if PYTHON_VERSION == 3:
         try:

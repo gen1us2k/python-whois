@@ -9,11 +9,12 @@ CACHE_FILE = None
 SLOW_DOWN = 0
 
 
-def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
+def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_returncode=0, cmd="whois"):
     """
     force=1				<bool>		Don't use cache.
     cache_file=<path>	<str>		Use file to store cache not only memory.
     slow_down=0			<int>		Time [s] it will wait after you query WHOIS database. This is useful when there is a limit to the number of requests at a time.
+    cmd='whois'         <str>       The path to the whois binary to use, by default 'whois'
     """
     assert isinstance(domain, str), Exception('`domain` - must be <str>')
     cache_file = cache_file or CACHE_FILE
@@ -37,7 +38,7 @@ def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_retur
     if tld not in TLD_RE.keys(): raise Exception("Unknown TLD: {0}\n(all known TLD: {1})".format(tld, list(TLD_RE.keys())))
 
     while 1:
-        pd = do_parse(do_query(d, host, force, cache_file, slow_down, ignore_returncode), tld)
+        pd = do_parse(do_query(d, host, force, cache_file, slow_down, ignore_returncode, cmd=cmd), tld)
         if (not pd or not pd['domain_name'][0]) and len(d) > 2:
             d = d[1:]
         else:
