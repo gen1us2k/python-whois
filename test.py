@@ -70,6 +70,7 @@ nic.cl
 nic.company
 nic.in
 test.com.br
+nic.ge,whois.nic.ge
 '''
 
 def parse(data):

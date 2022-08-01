@@ -660,3 +660,10 @@ br = {
     'creation_date': r'created:\s*(\d+)',
     'registrant': r'owner:\s*(.+)',
 }
+
+ge = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+    'status': r'Domain Status:\s?(.+)',
+}
