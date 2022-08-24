@@ -78,6 +78,10 @@ ru_rf = {
     'extend': 'ru',
 }
 
+ru_rus = {
+    'extend': 'com',
+}
+
 lv = {
     'extend': 'ru',
 
