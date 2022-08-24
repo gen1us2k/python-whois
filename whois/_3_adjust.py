@@ -93,6 +93,7 @@ def str_to_date(s):
             s = re.sub(r"([+-])(\d):(\d\d)\)$", r"\g<1>0\2\3)", s)  # "+0:00)"
             s = re.sub(r"([+-]\d\d):(\d\d)\)$", r"\1\2)", s)  # "+00:00)"
             s = re.sub(r"([+-]\d\d)$", r"\g<1>00", s)  # "+00"
+            s = re.sub(r"([+-])(\d)\)$", r"\g<1>0\g<2>00)", s)  # "+8)"
         try:
             return datetime.datetime.strptime(s, format)
         except ValueError as e:
@@ -115,6 +116,7 @@ def str_to_date_py2(s):
             s = re.sub(r"[+-]\d:\d\d", "", s)
             s = re.sub(r"[+-]\d\d:\d\d", "", s)
             s = re.sub(r"[+-]\d\d$", "", s)
+            s = re.sub(r"[+-]\d\)$", ")", s)
         try:
             return datetime.datetime.strptime(s, format) + datetime.timedelta(hours=tz)
         except ValueError as e:
