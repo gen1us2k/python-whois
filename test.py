@@ -72,6 +72,7 @@ nic.in
 test.com.br
 nic.ge,whois.nic.ge
 nic.рус
+whois.twnic.net.tw
 '''
 
 def parse(data):
