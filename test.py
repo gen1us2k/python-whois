@@ -71,6 +71,7 @@ nic.company
 nic.in
 test.com.br
 nic.ge,whois.nic.ge
+nic.рус
 '''
 
 def parse(data):
