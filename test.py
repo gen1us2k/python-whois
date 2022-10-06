@@ -73,6 +73,7 @@ test.com.br
 nic.ge,whois.nic.ge
 nic.рус
 whois.twnic.net.tw
+nic.онлайн
 '''
 
 def parse(data):

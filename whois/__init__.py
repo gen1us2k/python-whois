@@ -32,6 +32,8 @@ def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_retur
         tld = 'ru_rf'
     elif domain.endswith('.рус') or domain.endswith('.xn--p1acf'):
         tld = 'ru_rus'
+    elif domain.endswith('.онлайн') or domain.endswith('.xn--80asehdb'):
+        tld = 'ru_online'
     elif domain.endswith('.in'):
         tld = 'dot_in'
     else:
