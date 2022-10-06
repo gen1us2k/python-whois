@@ -82,6 +82,12 @@ ru_rus = {
     'extend': 'com',
 }
 
+ru_online = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
+
 lv = {
     'extend': 'ru',
 
