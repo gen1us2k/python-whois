@@ -695,3 +695,21 @@ tw = {
     'status': r'Domain Status:\s?(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
+
+sg = {
+    'extend': None,
+
+    'domain_name': r'Domain Name:\s+(\S+)',
+    'registrar': r'Administrative Contact:\n\s+Name:\s+(.*)\n',
+    'registrant': r'Registrant:\n\s+Name:\s+(.*)\n',
+    'registrant_cc': None,
+
+    'creation_date': r'Creation Date:\s+(.+)',
+    'expiration_date': r'Expiration Date:\s+(.+)',
+    'updated_date': None,
+
+    # TODO: improve parsing when >2 name servers
+    'name_servers': r'Name Servers:\n\s+([.\w]+).*\n\s+([.\w]+)',
+    'status': r'Domain Status:\s?(.+)',
+    'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
