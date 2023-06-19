@@ -75,6 +75,7 @@ nic.ge,whois.nic.ge
 nic.рус
 whois.twnic.net.tw
 nic.онлайн
+nic.studio,whois.identitydigital.services
 '''
 
 def parse(data):

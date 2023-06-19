@@ -713,3 +713,9 @@ sg = {
     'status': r'Domain Status:\s?(.+)',
     'emails': r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
+
+studio = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
