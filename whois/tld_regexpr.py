@@ -719,3 +719,10 @@ studio = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+dot_id = {
+    'extend': 'co_ua',
+
+    'registrar': r'Sponsoring Registrar Organization:\s?(.+)',
+    'registrant_cc': r'Sponsoring Registrar Country:\s*(.+)',
+}
