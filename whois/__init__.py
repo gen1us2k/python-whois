@@ -36,6 +36,8 @@ def query(domain, host=None, force=0, cache_file=None, slow_down=0, ignore_retur
         tld = 'ru_online'
     elif domain.endswith('.in'):
         tld = 'dot_in'
+    elif domain.endswith('.id'):
+        tld = 'dot_id'
     else:
         tld = d[-1]
 

@@ -76,6 +76,7 @@ nic.рус
 whois.twnic.net.tw
 nic.онлайн
 nic.studio,whois.identitydigital.services
+google.id
 '''
 
 def parse(data):
