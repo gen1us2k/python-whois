@@ -721,8 +721,7 @@ studio = {
 }
 
 dot_id = {
-    'extend': 'co_ua',
+    'extend': 'com',
 
-    'registrar': r'Sponsoring Registrar Organization:\s?(.+)',
-    'registrant_cc': r'Sponsoring Registrar Country:\s*(.+)',
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
