@@ -725,3 +725,9 @@ dot_id = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+shop = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
