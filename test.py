@@ -79,6 +79,7 @@ nic.studio,whois.identitydigital.services
 google.id
 nic.shop,whois.nic.shop
 nic.life
+nic.store,whois.centralnic.com
 '''
 
 def parse(data):

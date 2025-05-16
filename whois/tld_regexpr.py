@@ -737,3 +737,9 @@ life = {
 
     'expiration_date': r'Registry Expiry Date:\s?(.+)',
 }
+
+store = {
+    'extend': 'com',
+
+    'expiration_date': r'Registry Expiry Date:\s?(.+)',
+}
