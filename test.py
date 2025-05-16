@@ -78,6 +78,7 @@ nic.онлайн
 nic.studio,whois.identitydigital.services
 google.id
 nic.shop,whois.nic.shop
+nic.life
 '''
 
 def parse(data):
